@@ -68,6 +68,7 @@ private:
     QWebEnginePage *_controlpage;
     QNetworkReply *_detectreply;
     QSettings *_cfg;
+    QString _type;
     QString _protocal;
     QString _url;
     QString _username;

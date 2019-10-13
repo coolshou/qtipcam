@@ -110,6 +110,7 @@ void MainWindow::on_actionQuit_triggered()
 void MainWindow::loadSetting()
 {
     _cfg->beginGroup("main");
+    _type = _cfg->value("type", "CS-673W").toString();
     _protocal = _cfg->value("protocal", "rtsp").toString();
     _url = _cfg->value("url", "192.168.10.32").toString();
     _username = _cfg->value("username", "admin").toString();
@@ -134,6 +135,7 @@ void MainWindow::managerFinished(QNetworkReply *reply)
 void MainWindow::saveSetting()
 {
     _cfg->beginGroup("main");
+    _cfg->setValue("type", _type);
     _cfg->setValue("protocal", _protocal);
     _cfg->setValue("url", _url);
     _cfg->setValue("username", _username);
