@@ -27,18 +27,24 @@ MainWindow::MainWindow(QWidget *parent) :
     _player = new QMediaPlayer();
     ui->vbox->addWidget(_vw1);
     _player->setVideoOutput(_vw1);
-// TODO setting
-    const QUrl url1 = QUrl("rtsp://admin:123456home@192.168.10.32:554/play1.sdp");
-    const QNetworkRequest requestRtsp1(url1);
-    _player->setMedia(requestRtsp1);
-    _player->play();
+    start();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+void MainWindow::start(){
+    //const QUrl url1 = QUrl("rtsp://admin:123456home@192.168.10.32:554/play1.sdp");
+    //rtsp profile 1
+    QString s ="rtsp://";
+    s.append(_username+":"+_passwd+"@"+_url+":"+QString::number(_port)+"/play1.sdp");
+    QUrl url1 = QUrl(s);
+    const QNetworkRequest requestRtsp1(url1);
+    _player->setMedia(requestRtsp1);
+    _player->play();
 
+}
 void MainWindow::detectIPCam(){
     // TODO, redirect? title?
     QString s ="http://";

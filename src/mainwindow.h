@@ -28,6 +28,7 @@ public:
 
 
     void detectIPCam();
+    void start();
 public slots:
     void handleAuthenticationRequired(QNetworkReply *reply, QAuthenticator *auth);
     void slotDetectReadyRead();
