@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="down">images/arr-d.png</file>
+        <file alias="left">images/arr-l.png</file>
+        <file alias="leftdown">images/arr-ld.png</file>
+        <file alias="leftup">images/arr-lu.png</file>
+        <file alias="right">images/arr-r.png</file>
+        <file alias="rightdown">images/arr-rd.png</file>
+        <file alias="rightup">images/arr-ru.png</file>
+        <file alias="up">images/arr-u.png</file>
+        <file alias="qipcom">images/qipcom.png</file>
+    </qresource>
+</RCC>
