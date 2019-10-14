@@ -12,6 +12,8 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 
+#include "camtype.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -68,7 +70,7 @@ private:
     QWebEnginePage *_controlpage;
     QNetworkReply *_detectreply;
     QSettings *_cfg;
-    QString _type;
+    int _type;
     QString _protocal;
     QString _url;
     QString _username;
@@ -76,6 +78,7 @@ private:
     int _port;
     int _x_offset;
     int _y_offset;
+    int _singleMove; //TV_IP651W
 };
 
 #endif // MAINWINDOW_H
