@@ -12,6 +12,7 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 
+#include "dialogcfg.h"
 #include "camtype.h"
 
 namespace Ui {
@@ -56,13 +57,14 @@ private slots:
     void on_pb_h_clicked();
     void on_sb_x_valueChanged(int x);
     void on_sb_y_valueChanged(int y);
-
     void on_pb_Patrol_clicked();
-
     void on_pb_pStop_clicked();
+
+    void on_actionConfig_triggered();
 
 private:
     Ui::MainWindow *ui;
+    DialogCfg *dlg;
     QVideoWidget *_vw1;
     QMediaPlayer *_player;
     QNetworkAccessManager *manager;

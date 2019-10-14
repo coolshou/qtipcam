@@ -89,6 +89,7 @@ QString MainWindow::_genAuthdata()
     QString headerData = "Basic " + data;
     return headerData;
 }
+
 void MainWindow::doMoveRequest(int x, int y)
 {
     QString s ="http://";
@@ -260,4 +261,11 @@ void MainWindow::on_pb_pStop_clicked()
     s.append(_url).append(p);
     request.setUrl(QUrl(s));
     manager->get(request);
+}
+
+void MainWindow::on_actionConfig_triggered()
+{
+    loadSetting();
+    dlg = new DialogCfg(_cfg, this);
+    dlg->show();
 }

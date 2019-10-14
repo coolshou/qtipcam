@@ -30,14 +30,17 @@ CONFIG += c++11
 
 SOURCES += \
         src/main.cpp \
-        src/mainwindow.cpp
+        src/mainwindow.cpp \
+    src/dialogcfg.cpp
 
 HEADERS += \
         src/mainwindow.h \
-    src/camtype.h
+    src/camtype.h \
+    src/dialogcfg.h
 
 FORMS += \
-        src/mainwindow.ui
+        src/mainwindow.ui \
+    src/dialogcfg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
