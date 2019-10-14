@@ -33,7 +33,8 @@ SOURCES += \
         src/mainwindow.cpp
 
 HEADERS += \
-        src/mainwindow.h
+        src/mainwindow.h \
+    src/camtype.h
 
 FORMS += \
         src/mainwindow.ui

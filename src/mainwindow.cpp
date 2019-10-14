@@ -2,7 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QVBoxLayout>
 #include <QDebug>
-
+#include "camtype.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -110,7 +110,8 @@ void MainWindow::on_actionQuit_triggered()
 void MainWindow::loadSetting()
 {
     _cfg->beginGroup("main");
-    _type = _cfg->value("type", "CS-673W").toString();
+    camtype tpy = camtype::CS_673W;
+    _type = _cfg->value("type", int(tpy)).toString();
     _protocal = _cfg->value("protocal", "rtsp").toString();
     _url = _cfg->value("url", "192.168.10.32").toString();
     _username = _cfg->value("username", "admin").toString();
