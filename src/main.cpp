@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    a.setApplicationName("qipcam");
+    a.setApplicationName("qtipcam");
     a.setOrganizationName("coolshou.idv");
     a.setOrganizationDomain("coolshou.idv");
 

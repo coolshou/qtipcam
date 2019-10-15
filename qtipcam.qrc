@@ -8,6 +8,6 @@
         <file alias="rightdown">images/arr-rd.png</file>
         <file alias="rightup">images/arr-ru.png</file>
         <file alias="up">images/arr-u.png</file>
-        <file alias="qipcom">images/qipcom.png</file>
+        <file alias="qtipcom">images/qtipcom.png</file>
     </qresource>
 </RCC>
