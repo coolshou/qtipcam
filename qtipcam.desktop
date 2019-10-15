@@ -1,0 +1,13 @@
+#!/usr/bin/env xdk-open
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=qtipcam
+GenericName=qtipcam
+Comment=qt base ipcam
+Type=Application
+Exec=qtipcam
+Icon=qtipcam.png
+Terminal=false
+StartupNotify=true
+Categories=Network;QT;
