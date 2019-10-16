@@ -10,6 +10,7 @@ Vcs-Git: https://github.com/coolshou/qtipcam.git
 
 Package: qtipcam
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer1.0-plugins-ugly, gstreamer1.0-plugins-bad
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer1.0-plugins-ugly, 
+ gstreamer1.0-plugins-bad, libqt5multimedia5-plugins
 Description: qt base ipcam viewer
  qt base ipcam viewer
