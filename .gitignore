@@ -1,0 +1,6 @@
+/moc_*.*
+/*.o
+/ui_*.h
+/*.pro.user
+/.qmake.stash
+/qrc_*.cpp
