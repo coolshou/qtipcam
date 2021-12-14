@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QSettings>
+//#include <QDebug>
+#include "qdebug.h"
 
 namespace Ui {
 class DialogCfg;

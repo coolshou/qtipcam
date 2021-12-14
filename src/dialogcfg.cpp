@@ -9,6 +9,14 @@ DialogCfg::DialogCfg(QSettings *cfg, QWidget *parent) :
 {
     _cfg = cfg;
     ui->setupUi(this);
+    ui->cb_type->clear();
+    for (int i = 0; i < CamList.size(); ++i){
+        //ui->cb_type->addItem(CamList.at(i));
+         qDebug() << CamList.at(i).toLocal8Bit().constData();// << Qt::endl;
+         ui->cb_type->addItem(CamList.at(i).toLocal8Bit().constData());
+    };
+
+    // TODO: camtype combobox list
     loadSetting();
 }
 

@@ -11,6 +11,8 @@
 #include <QAuthenticator>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QAuthenticator>
+
 
 #include "dialogcfg.h"
 #include "camtype.h"
@@ -32,13 +34,17 @@ public:
 
     void detectIPCam();
     void start();
+    QString getBasicAuth();
+    QString getDigestAuth();
 public slots:
-    void handleAuthenticationRequired(QNetworkReply *reply, QAuthenticator *auth);
+    void handleAuthRequired(QNetworkReply *reply, QAuthenticator *auth);
     void slotDetectReadyRead();
+
+
 protected:
     void closeEvent(QCloseEvent *event);
 private:
-    QString _genAuthdata();
+    //QString _genAuthdata();
 private slots:
     void slotReadyRead();
     void slotError(QNetworkReply::NetworkError);
@@ -67,6 +73,7 @@ private:
     DialogCfg *dlg;
     QVideoWidget *_vw1;
     QMediaPlayer *_player;
+    QNetworkAccessManager *videomanager;
     QNetworkAccessManager *manager;
     QNetworkRequest request;
     QWebEnginePage *_controlpage;

@@ -17,11 +17,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>qipcam</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../qtipcam.qrc">
-    <normaloff>:/qipcom</normaloff>:/qipcom</iconset>
+    <normaloff>:/qtipcam</normaloff>:/qtipcam</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0">
@@ -127,6 +127,9 @@
            <widget class="QPushButton" name="pb_h">
             <property name="text">
              <string>H</string>
+            </property>
+            <property name="autoDefault">
+             <bool>true</bool>
             </property>
            </widget>
           </item>
@@ -333,7 +336,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>29</height>
+     <height>36</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
