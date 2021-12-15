@@ -1,17 +1,23 @@
-#include "mainwindow.h"
 #include <QApplication>
-#include <QCoreApplication>
+//#include <QCoreApplication>
 #include <iostream>
+
+#include "mainwindow.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    // Qt sets the locale in the QApplication constructor, but libmpv requires
+    // the LC_NUMERIC category to be set to "C", so change it back.
+    std::setlocale(LC_NUMERIC, "C");
+
     a.setApplicationName("qtipcam");
     a.setOrganizationName("coolshou.idv");
     a.setOrganizationDomain("coolshou.idv");
 
-    QStringList argList = QCoreApplication::arguments();
+//    QStringList argList = QCoreApplication::arguments();
     MainWindow w;
+    /*
     if(argList.contains("--fullscreen")) {
         w.showFullScreen();
     }
@@ -27,7 +33,7 @@ int main(int argc, char *argv[])
     }
     else {
         w.show();
-    }
-
+    }*/
+    w.show();
     return a.exec();
 }

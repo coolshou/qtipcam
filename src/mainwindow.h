@@ -12,7 +12,9 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QAuthenticator>
+#include <QCloseEvent>
 
+#include <mpv/client.h>
 
 #include "dialogcfg.h"
 #include "camtype.h"
@@ -30,8 +32,6 @@ public:
     ~MainWindow();
     void doMoveRequest(int x, int y);
     void saveSetting();
-
-
     void detectIPCam();
     void start();
     QString getBasicAuth();
@@ -43,11 +43,11 @@ public slots:
 
 protected:
     void closeEvent(QCloseEvent *event);
-private:
-    //QString _genAuthdata();
+
 private slots:
+    void onMpvEvents();
     void slotReadyRead();
-    void slotError(QNetworkReply::NetworkError);
+    void slotError(QNetworkReply::NetworkError error);
     void on_actionQuit_triggered();
     void on_pb_u_clicked();
     void loadSetting();
@@ -67,16 +67,25 @@ private slots:
     void on_pb_pStop_clicked();
 
     void on_actionConfig_triggered();
+    void onError(QMediaPlayer::Error error);
+    void onStateChanged(QMediaPlayer::State state);
+
+signals:
+    void mpv_events();
 
 private:
     Ui::MainWindow *ui;
+    mpv_handle *mpv;
+    void create_player();
+    void handle_mpv_event(mpv_event *event);
+
     DialogCfg *dlg;
-    QVideoWidget *_vw1;
-    QMediaPlayer *_player;
+    //QVideoWidget *_vw1;
+    //QMediaPlayer *_player;
     QNetworkAccessManager *videomanager;
     QNetworkAccessManager *manager;
     QNetworkRequest request;
-    QWebEnginePage *_controlpage;
+    //QWebEnginePage *_controlpage;
     QNetworkReply *_detectreply;
     QSettings *_cfg;
     int _type;
@@ -84,10 +93,13 @@ private:
     QString _url;
     QString _username;
     QString _passwd;
+    QString _nonce;
+    QString _realm;
     int _port;
     int _x_offset;
     int _y_offset;
     int _singleMove; //TV_IP651W
+
 };
 
 #endif // MAINWINDOW_H

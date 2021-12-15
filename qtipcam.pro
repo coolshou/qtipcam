@@ -27,7 +27,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-CONFIG += c++11
+# require libmpv-dev:amd64    0.32.0-1ubuntu1
+QT_CONFIG -= no-pkg-config
+CONFIG += link_pkgconfig debug
+PKGCONFIG += mpv
+
+#CONFIG += c++11
 
 SOURCES += \
         src/main.cpp \
@@ -35,6 +40,7 @@ SOURCES += \
     src/dialogcfg.cpp
 
 HEADERS += \
+    lib/qthelper.hpp \
         src/mainwindow.h \
     src/camtype.h \
     src/dialogcfg.h
