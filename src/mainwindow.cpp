@@ -183,9 +183,13 @@ void MainWindow::start(){
 //        }
     }
     if (true){
-        const QByteArray c_filename = filename.toUtf8();
-        const char *args[] = {"loadfile", c_filename.data(), NULL};
-        mpv_command_async(mpv, 0, args);
+        if (filename != ""){
+            const QByteArray c_filename = filename.toUtf8();
+            const char *args[] = {"loadfile", c_filename.data(), NULL};
+            mpv_command_async(mpv, 0, args);
+        }else{
+            qDebug() << "Did not support cam type: " << _type;
+        }
     }
 
 }
