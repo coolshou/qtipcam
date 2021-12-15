@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent) :
     _realm = "";
 
     if (_type == int(camtype::DCS_930L)) {
-        //ui->w_control->setEnable(false);
+        ui->w_control->setEnabled(false);
     }
     request.setHeader(QNetworkRequest::ContentTypeHeader, QVariant("application/x-www-form-urlencoded"));
     manager = new QNetworkAccessManager();
@@ -250,7 +250,8 @@ void MainWindow::doMoveRequest(int x, int y)
         connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
                 this, SLOT(slotError(QNetworkReply::NetworkError)));
 
-    }else if ((_type == int(camtype::TV_IP651W)) || (_type == int(camtype::DCS_5030L))) {
+    }else if ((_type == int(camtype::TV_IP651W)) ||
+              (_type == int(camtype::DCS_5030L)) ) {
 
         QString p = "";
         QString headerData = "";
@@ -287,6 +288,8 @@ void MainWindow::doMoveRequest(int x, int y)
         connect(reply, SIGNAL(readyRead()), this, SLOT(slotReadyRead()));
         connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
                 this, SLOT(slotError(QNetworkReply::NetworkError)));
+    }else{
+        qDebug() << "doMoveRequest no support cam type:" << _type;
     }
 
         /*camtype::DCS_5030L
