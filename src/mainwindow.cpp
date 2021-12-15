@@ -145,7 +145,8 @@ void MainWindow::start(){
 //        _player->setMedia(requestRtsp1);
 //        _player->play();
     } else if ((_type == int(camtype::TV_IP651W)) ||
-               (_type == int(camtype::DCS_5030L)) ){
+               (_type == int(camtype::DCS_5030L)) ||
+               (_type == int(camtype::DCS_930L))){
         //check if we need digest auth?nonce
         qDebug() << "first post";
         QByteArray byteArrayObject;
