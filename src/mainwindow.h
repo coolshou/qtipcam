@@ -2,9 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMediaPlayer>
+//#include <QMediaPlayer>
 #include <QNetworkRequest>
-#include <QVideoWidget>
+//#include <QVideoWidget>
 #include <QSettings>
 #include <QWebEnginePage>
 #include <QUrl>
@@ -67,8 +67,8 @@ private slots:
     void on_pb_pStop_clicked();
 
     void on_actionConfig_triggered();
-    void onError(QMediaPlayer::Error error);
-    void onStateChanged(QMediaPlayer::State state);
+    //void onError(QMediaPlayer::Error error);
+    //void onStateChanged(QMediaPlayer::State state);
 
 signals:
     void mpv_events();

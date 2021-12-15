@@ -98,6 +98,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+/*
 void MainWindow::onStateChanged(QMediaPlayer::State state){
     qDebug() << "onStateChanged:" << state;
 }
@@ -109,6 +110,7 @@ void MainWindow::onError(QMediaPlayer::Error error)
 //    text.append("\n").append(d->mediaPlayer->errorString()).append(" : ").append(d->mediaPlayer->mediaStatus());
 //    ui.textEdit->setText(text);
 }
+*/
 QString MainWindow::getDigestAuth(){
     /*
      Authorization: Digest username="admin", realm="DCS-5030L_A7", nonce="37c39755a278d15c45a228701c1dae20", uri="/setControlPanTilt", response="d5d1f7317a693c8024f0853c1a4de384", qop=auth, nc=000001a7, cnonce="3b552718be0ead2e"

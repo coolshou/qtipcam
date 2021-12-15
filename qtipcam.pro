@@ -6,8 +6,10 @@
 # qtbase5-dev
 QT += core gui
 # qtmultimedia5-dev,
-QT += multimediawidgets network
+#QT += multimediawidgets
+QT += network
 #unix{
+#qtwebengine5-dev
     QT += webengine webenginewidgets
 #}
 
